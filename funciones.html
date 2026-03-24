@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consola de Funciones | MC Advanced</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="creeper-bg"></div>
+
+    <header>
+        <h1 class="neon-text">CONSOLA <span class="white">SCRIPTS</span></h1>
+        <p>Copia los códigos avanzados para tu mundo o servidor.</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="card">
+            <div class="badge" style="background: #00a2ff;">GAMETEST</div>
+            <h2>Auto-Mensaje NPC</h2>
+            <p>Script para que el servidor salude a los nuevos jugadores.</p>
+            <div class="code-box">
+<pre id="code1">
+world.afterEvents.playerSpawn.subscribe((ev) => {
+  const { player } = ev;
+  player.sendMessage("§a¡Bienvenido a MC Advanced!");
+});
+</pre>
+            </div>
+            <button class="btn btn-blue" onclick="copiarCodigo(document.getElementById('code1').innerText)">COPIAR SCRIPT</button>
+        </section>
+
+        <section class="card">
+            <div class="badge" style="background: #ffaa00;">JSON 4D</div>
+            <h2>Skin Geometry 4D</h2>
+            <p>Base de geometría para capas o skins con relieve.</p>
+            <div class="code-box">
+<pre id="code2">
+"geometry.humanoid.custom": {
+  "bones": [
+    {
+      "name": "waist",
+      "pivot": [0, 12, 0],
+      "cubes": [
+        {"origin": [-4, 0, -2], "size": [8, 12, 4], "uv": [16, 16]}
+      ]
+    }
+  ]
+}
+</pre>
+            </div>
+            <button class="btn btn-green" onclick="copiarCodigo(document.getElementById('code2').innerText)">COPIAR GEOMETRY</button>
+        </section>
+
+        <div style="width: 100%; text-align: center; margin-top: 20px;">
+            <a href="index.html" class="btn btn-dark" style="width: 200px; margin: 0 auto;">← VOLVER AL INICIO</a>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
