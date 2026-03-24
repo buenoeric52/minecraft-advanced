@@ -6,9 +6,19 @@
     <title>MC ADVANCED | ErickDev</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://utils.creeper.host/images/face/creeper">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="loader">
+        <div class="creeper-head">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="mouth"></div>
+        </div>
+        <h1 class="loader-text">CARGANDO MC ADVANCED...</h1>
+        <p style="color: #555; font-family: 'Orbitron'; font-size: 0.8rem;">v1.26.10.4</p>
+    </div>
+
     <div class="creeper-bg"></div>
     
     <header>
@@ -23,7 +33,7 @@
         <section class="card glass-effect">
             <div class="badge pulse">OFICIAL</div>
             <div class="card-icon">📦</div>
-            <h2>salió Minecraft bedrock para su última versión1.26.10.4 APK </h2>
+            <h2>Minecraft Bedrock APK</h2>
             <p class="version-text">Versión 1.26.10.4 (64 Bits)</p>
             <p class="author-tag">By zRingPvP</p>
             <div class="button-group">
@@ -45,6 +55,23 @@
             <h2>Consola de Scripts</h2>
             <p>Accede a la base de datos de códigos avanzados para optimización.</p>
             <button onclick="window.location.href='funciones.html'" class="btn btn-cyan">ENTRAR A CÓDIGOS</button>
+        </section>
+
+        <section class="card glass-effect comment-section">
+            <div class="card-icon">💬</div>
+            <h2>Comunidad</h2>
+            <p>¿Cómo te funcionó la APK?</p>
+            <div class="comment-box">
+                <textarea id="user-comment" placeholder="Escribe tu comentario aquí..."></textarea>
+            </div>
+            <button class="btn btn-green" onclick="enviarComentario()">ENVIAR OPINIÓN</button>
+        </section>
+
+        <section class="card glass-effect">
+            <div class="card-icon">⚙️</div>
+            <h2>Ajustes de Interfaz</h2>
+            <p>Personaliza tu experiencia visual.</p>
+            <button class="btn btn-outline" onclick="alert('Configuración guardada en el dispositivo')">LIMPIAR CACHÉ</button>
         </section>
     </main>
 

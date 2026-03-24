@@ -1,8 +1,16 @@
+/* =========================================
+   MC ADVANCED - ESTILOS OFICIALES
+   ========================================= */
+
 /* Importar fuentes gamer y modernas */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;700&display=swap');
 
 /* Configuración General */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body {
     background-color: #000;
@@ -15,19 +23,65 @@ body {
     overflow-x: hidden;
 }
 
-/* Fondo de Minecraft Épico */
+/* Fondo de Minecraft con desenfoque */
 .creeper-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Degradado oscuro para resaltar el contenido */
     background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
                 url('https://wallpaperaccess.com/full/1512411.jpg');
     background-size: cover;
     background-position: center;
     z-index: -1;
+}
+
+/* Pantalla de Carga (Intro) */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.8s ease;
+}
+
+.creeper-head {
+    width: 80px;
+    height: 80px;
+    background: #39FF14;
+    position: relative;
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.8);
+    margin-bottom: 20px;
+    border: 3px solid #000;
+}
+
+.eye { width: 16px; height: 16px; background: #000; position: absolute; top: 16px; }
+.left { left: 14px; }
+.right { right: 14px; }
+.mouth { 
+    width: 32px; 
+    height: 32px; 
+    background: #000; 
+    position: absolute; 
+    bottom: 8px; 
+    left: 24px; 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 75% 100%, 75% 50%, 25% 50%, 25% 100%, 0% 100%);
+}
+
+.loader-text {
+    font-family: 'Orbitron', sans-serif;
+    color: #39FF14;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
 }
 
 /* Textos Neón */
@@ -38,6 +92,7 @@ body {
     text-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
     margin-top: 40px;
     letter-spacing: 2px;
+    text-align: center;
 }
 .white { color: #fff; text-shadow: none; }
 
@@ -47,9 +102,10 @@ body {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;
+    text-align: center;
 }
 
-/* Contenedor de Tarjetas con Efecto Cristal */
+/* Tarjetas Estilo Cristal (Glassmorphism) */
 .container {
     display: flex;
     gap: 25px;
@@ -60,7 +116,7 @@ body {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.05); /* Efecto cristal */
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -68,84 +124,68 @@ body {
     border-radius: 20px;
     width: 320px;
     text-align: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
+    transition: 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
     border-color: #39FF14;
-    box-shadow: 0 15px 30px rgba(57, 255, 20, 0.15);
+    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.2);
 }
 
-/* Botones */
+/* Botones con estilo Minecraft */
 .btn {
     display: block;
     width: 100%;
     padding: 14px;
     margin-top: 15px;
-    border-radius: 10px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     cursor: pointer;
     border: none;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
-.btn-green { background: #39FF14; color: #000; box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); }
+.btn-green { background: #39FF14; color: #000; box-shadow: 0 4px 0 #28cc00; }
+.btn-green:active { transform: translateY(4px); box-shadow: none; }
+
 .btn-blue { background: #00a2ff; color: #fff; }
 .btn-cyan { background: #00f2ff; color: #000; }
 .btn-outline { border: 2px solid rgba(255,255,255,0.2); color: #fff; background: transparent; }
 
-.btn:hover { 
-    filter: brightness(1.2); 
-    transform: scale(1.03);
+/* Sección de Comentarios */
+.comment-section {
+    max-width: 450px;
+    margin-top: 20px;
+    border: 1px dashed #39FF14;
 }
 
-/* Badges y Detalles */
-.badge {
-    background: #ff4444;
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    width: fit-content;
-    margin: 0 auto 15px;
-    font-weight: bold;
+.comment-box textarea {
+    width: 100%;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    margin-top: 15px;
+    font-family: 'Inter', sans-serif;
+    resize: none;
 }
 
-.blue { background: #007bff; }
-
-.card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    display: block;
-}
-
-/* Footer */
-footer {
-    margin-top: auto;
-    padding: 30px;
-    color: #555;
-    font-size: 0.8rem;
-}
-
-/* Animación de pulso para el botón principal */
-.pulse {
-    animation: pulse-animation 2s infinite;
-}
-
+/* Animaciones */
+.pulse { animation: pulse-animation 2s infinite; }
 @keyframes pulse-animation {
-    0% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.5); }
+    0% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.6); }
     70% { box-shadow: 0 0 0 15px rgba(57, 255, 20, 0); }
     100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
 }
 
-/* Ajustes para Celulares */
+/* Adaptación para celulares */
 @media (max-width: 600px) {
-    .container { padding: 20px; }
-    .card { width: 100%; }
     .neon-text { font-size: 1.8rem; }
+    .card { width: 90%; }
 }
