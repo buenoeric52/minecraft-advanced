@@ -2,77 +2,101 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>MC ADVANCED | ErickDev</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="mc-anime-bg"></div>
+    <div class="vignette"></div>
+
+    <nav class="app-bar">
+        <div class="app-bar-content">
+            <span class="mc-font" style="font-size: 8px;">MC ADVANCED</span>
+            <div class="settings-menu">
+                <button class="dots-btn" onclick="toggleSettings()">
+                    <span></span><span></span><span></span>
+                </button>
+                <div id="settings-dropdown" class="dropdown-content">
+                    <p class="mc-font" style="font-size: 7px; padding: 10px;">AJUSTES</p>
+                    <button onclick="cambiarFondo()">CAMBIAR TEMA</button>
+                    <button onclick="limpiarCache()">LIMPIAR CACHÉ</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <header class="main-header">
         <div class="header-content">
             <h1 class="neon-text-pro">MC <span class="white">ADVANCED</span></h1>
             <div class="status-indicator">
                 <span class="dot pulse"></span>
-                <p class="mc-font">OFFICIAL v1.26.10.4</p>
+                <p class="mc-font">ONLINE | v1.26.10.4</p>
             </div>
         </div>
     </header>
 
     <main class="container">
         
-        <section class="mc-card-pro highlight-card">
-            <div class="card-tag">NEW VERSION</div>
-            <div class="card-icon">📦</div>
-            <h2 class="mc-font">MINECRAFT BEDROCK</h2>
-            <p class="description">Descarga la última versión 1.26.10.4 optimizada para arm64-v8a. Alto rendimiento garantizado.</p>
+        <section class="mc-card-pro download-card">
+            <div class="card-header">
+                <div class="card-tag">NEW VERSION</div>
+                <span class="version-label">ARM64-V8A</span>
+            </div>
+            
+            <div class="card-body">
+                <div class="icon-box">📦</div>
+                <div class="info-box">
+                    <h2 class="mc-font">MINECRAFT PE</h2>
+                    <p class="description">Optimizado por ErickDev para máximo rendimiento.</p>
+                </div>
+            </div>
             
             <div class="action-area">
                 <a href="https://www.mediafire.com/file/iktnkzvfwhzcz4e/minecraft-1.26.10.4-arm64-v8a.apk/file" 
-                   target="_blank"
-                   class="mc-btn mc-btn-green pulse-btn" 
-                   aria-label="Descargar APK Directa">
-                   DESCARGAR APK v1.26.10.4
-                </a>
-                
-                <a href="https://www.minecraft.net/" 
-                   target="_blank" 
-                   class="mc-btn mc-btn-gray" 
-                   aria-label="Sitio Oficial">
-                   SITIO OFICIAL MC
+                   target="_blank" class="mc-btn mc-btn-green big-btn">
+                   DESCARGAR APK DIRECTA
                 </a>
             </div>
         </section>
 
-        <section class="mc-card-pro">
-            <div class="card-icon">💻</div>
-            <h2 class="mc-font">CONSOLE ENGINE</h2>
-            <p class="description">Accede a la terminal de scripts y configuraciones JSON avanzadas.</p>
-            <a href="funciones.html" class="mc-btn mc-btn-blue">ABRIR CONSOLA</a>
-        </section>
+        <div class="quick-access">
+            <a href="funciones.html" class="quick-card">
+                <span class="q-icon">💻</span>
+                <span class="mc-font">SCRIPTS</span>
+            </a>
+            <a href="https://www.minecraft.net/" class="quick-card">
+                <span class="q-icon">🌐</span>
+                <span class="mc-font">OFICIAL</span>
+            </a>
+        </div>
 
         <section class="mc-card-pro chat-section">
-            <h2 class="mc-font">CHAT COMUNIDAD</h2>
+            <div class="chat-header">
+                <h2 class="mc-font">COMUNIDAD</h2>
+                <span class="online-count">128 conectados</span>
+            </div>
+            
             <div id="comments-display" class="mc-chat-box">
                 </div>
             
-            <div class="mc-input-group">
-                <div class="input-container">
-                    <input type="text" id="user-name" placeholder="Tu Nick..." class="mc-input">
+            <div class="mc-input-area">
+                <input type="text" id="user-name" placeholder="Tu Nick..." class="mc-input-small">
+                <div class="input-wrapper">
+                    <textarea id="user-comment" placeholder="Escribe un mensaje..." class="mc-input" rows="1"></textarea>
+                    <button onclick="enviarComentario()" class="send-btn">
+                        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                    </button>
                 </div>
-                <div class="input-container">
-                    <textarea id="user-comment" placeholder="Escribe un mensaje..." class="mc-input" rows="2"></textarea>
-                </div>
-                <button onclick="enviarComentario()" class="mc-btn mc-btn-green w-100">PUBLICAR MENSAJE</button>
             </div>
         </section>
         
     </main>
 
     <footer class="mc-footer">
-        <div class="footer-line"></div>
-        <p>TERMINAL SYSTEM // DESARROLLADO POR <strong>ERICKDEV</strong> - 2026</p>
+        <p>TERMINAL SYSTEM © 2026</p>
+        <p class="mc-font" style="font-size: 6px; margin-top: 5px;">ERICKDEV INDUSTRIES</p>
     </footer>
 
     <script src="script.js"></script>

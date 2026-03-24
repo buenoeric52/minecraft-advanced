@@ -2,48 +2,77 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consola de Scripts | MC Advanced</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TERMINAL ENGINE | MC Advanced</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=Fira+Code:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="mc-anime-bg"></div>
+    <div class="vignette"></div>
+
+    <nav class="app-bar">
+        <div class="app-bar-content">
+            <span class="mc-font" style="font-size: 8px;">SYSTEM://TERMINAL_SCRIPTS</span>
+            <div class="status-chip">MODO DEV</div>
+        </div>
+    </nav>
 
     <header class="main-header">
         <div class="header-content">
-            <h1 class="neon-text-pro">CONSOLA <span class="white">SCRIPTS</span></h1>
-            <p class="mc-font" style="font-size: 8px; color: #aaa;">DEVELOPER TERMINAL v1.2.5</p>
+            <h1 class="neon-text-pro">ENGINE <span class="white">SCRIPTS</span></h1>
+            <p class="mc-font" style="font-size: 7px; color: #39FF14; opacity: 0.8;">>_ ACCESSING_DATABASE... OK</p>
         </div>
     </header>
 
     <main class="container">
         
-        <section class="mc-card-pro highlight-card">
-            <div class="card-tag">JAVASCRIPT</div>
-            <div class="card-icon">📜</div>
-            <h2 class="mc-font">Auto-Mensaje NPC</h2>
-            <p class="description">Script de GameTest para enviar un mensaje automático de bienvenida a los nuevos usuarios.</p>
-            
-            <div class="code-terminal-mc">
+        <section class="mc-card-pro tech-card">
+            <div class="card-header-mc">
+                <div class="window-dots">
+                    <span class="w-dot red"></span>
+                    <span class="w-dot yellow"></span>
+                    <span class="w-dot green"></span>
+                </div>
+                <span class="mc-label">WELCOME_PLAYER.JS</span>
+            </div>
+
+            <div class="card-body">
+                <div class="tech-info">
+                    <h2 class="mc-font">AUTO-SALUDO NPC</h2>
+                    <p class="description">Script avanzado de GameTest Framework para dar la bienvenida a jugadores.</p>
+                </div>
+                
+                <div class="code-terminal-mc">
 <pre id="code1"><code>world.afterEvents.playerSpawn.subscribe((ev) => {
   const { player } = ev;
   player.sendMessage("§a¡Bienvenido a MC Advanced!");
 });</code></pre>
+                </div>
+                
+                <button class="mc-btn mc-btn-blue big-btn" onclick="copiarCodigo(document.getElementById('code1').innerText)">
+                    COPIAR JAVASCRIPT
+                </button>
             </div>
-            
-            <button class="mc-btn mc-btn-blue" onclick="copiarCodigo(document.getElementById('code1').innerText)">
-                COPIAR SCRIPT
-            </button>
         </section>
 
-        <section class="mc-card-pro">
-            <div class="card-tag">JSON 4D</div>
-            <div class="card-icon">💎</div>
-            <h2 class="mc-font">Skin Geometry 4D</h2>
-            <p class="description">Base de geometría avanzada para crear capas o skins con relieve y profundidad.</p>
-            
-            <div class="code-terminal-mc">
+        <section class="mc-card-pro tech-card">
+            <div class="card-header-mc">
+                <div class="window-dots">
+                    <span class="w-dot red"></span>
+                    <span class="w-dot yellow"></span>
+                    <span class="w-dot green"></span>
+                </div>
+                <span class="mc-label">SKIN_4D_BASE.JSON</span>
+            </div>
+
+            <div class="card-body">
+                <div class="tech-info">
+                    <h2 class="mc-font">GEOMETRY 4D</h2>
+                    <p class="description">Estructura de huesos y pivotes para modelos con relieve personalizado.</p>
+                </div>
+                
+                <div class="code-terminal-mc">
 <pre id="code2"><code>"geometry.humanoid.custom": {
   "bones": [
     {
@@ -55,35 +84,42 @@
     }
   ]
 }</code></pre>
+                </div>
+                
+                <button class="mc-btn mc-btn-green big-btn" onclick="copiarCodigo(document.getElementById('code2').innerText)">
+                    COPIAR GEOMETRY
+                </button>
             </div>
-            
-            <button class="mc-btn mc-btn-green" onclick="copiarCodigo(document.getElementById('code2').innerText)">
-                COPIAR GEOMETRY
-            </button>
         </section>
 
         <section class="mc-card-pro chat-section">
-            <h2 class="mc-font">FEEDBACK TÉCNICO</h2>
-            <p class="description" style="font-size: 11px;">¿Necesitas un script personalizado? Escríbelo aquí abajo.</p>
+            <div class="chat-header">
+                <h2 class="mc-font">FEEDBACK TÉCNICO</h2>
+                <div class="online-indicator"><span class="dot pulse"></span> SOPORTE ACTIVO</div>
+            </div>
             
             <div id="comments-display" class="mc-chat-box">
                 </div>
             
-            <div class="mc-input-group">
-                <input type="text" id="user-name" placeholder="Tu Nickname..." class="mc-input">
-                <textarea id="user-comment" placeholder="Describe el script que necesitas..." class="mc-input" rows="2"></textarea>
-                <button onclick="enviarComentario()" class="mc-btn mc-btn-green w-100">ENVIAR PETICIÓN</button>
+            <div class="mc-input-area">
+                <input type="text" id="user-name" placeholder="Tu Nick..." class="mc-input-small">
+                <div class="input-wrapper">
+                    <textarea id="user-comment" placeholder="¿Qué script necesitas?" class="mc-input" rows="1"></textarea>
+                    <button onclick="enviarComentario()" class="send-btn">
+                        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                    </button>
+                </div>
             </div>
         </section>
 
-        <div style="margin-top: 30px; margin-bottom: 50px;">
-            <a href="index.html" class="mc-btn mc-btn-gray">← VOLVER AL INICIO</a>
+        <div class="back-area">
+            <a href="index.html" class="mc-btn mc-btn-gray">← REGRESAR AL SISTEMA</a>
         </div>
 
     </main>
 
     <footer class="mc-footer">
-        <p>MC ADVANCED // <strong>ENGINE TERMINAL</strong> // 2026</p>
+        <p>ENGINE CORE // <strong>ERICKDEV</strong> // 2026</p>
     </footer>
 
     <script src="script.js"></script>
