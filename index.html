@@ -3,90 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MC ADVANCED | ErickDev Pro</title>
+    <title>MC ADVANCED | ErickDev Official</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://utils.creeper.host/images/face/creeper">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="loader">
-        <div class="creeper-container">
-            <div class="creeper-head">
-                <div class="eye left"></div>
-                <div class="eye right"></div>
-                <div class="mouth"></div>
-            </div>
-            <h1 class="loader-text">INICIANDO SISTEMA...</h1>
-            <div class="load-bar"><div class="progress"></div></div>
+        <div class="creeper-face-pixel">
+            <div class="pixel-eye"></div>
+            <div class="pixel-eye"></div>
+            <div class="pixel-mouth"></div>
         </div>
+        <h2 class="mc-font">MOJANG STUDIOS</h2>
+        <div class="loading-bar-mc"><div class="fill"></div></div>
     </div>
 
-    <div class="creeper-bg"></div>
+    <div class="mc-dirt-bg"></div>
     
-    <header>
-        <div class="logo-container">
-            <h1 class="neon-text">MC <span class="white">ADVANCED</span></h1>
-            <p class="subtitle">Premium Direct Downloads & 4D Scripts</p>
-            <div class="status-bar">
-                <span class="status-dot"></span> SERVIDOR ONLINE v1.26.10.4
-            </div>
-        </div>
+    <header class="main-header">
+        <img src="https://fontmeme.com/permalink/240324/5f949861694f4f35862d513725798934.png" alt="Minecraft Logo" class="mc-logo">
+        <h1 class="neon-text-pro">ADVANCED <span class="edition">EDITION</span></h1>
+        <div class="version-badge">OFFICIAL v1.26.10.4</div>
     </header>
 
-    <main class="container">
-        <section class="card glass-effect">
-            <div class="badge pulse">NUEVO</div>
-            <div class="card-icon">📦</div>
-            <h2>Minecraft Bedrock</h2>
-            <p class="version-text">Última Versión (64 Bits)</p>
-            <p class="author-tag">By zRingPvP</p>
-            <div class="button-group">
-                <a href="https://www.mediafire.com/file/iktnkzvfwhzcz4e/minecraft-1.26.10.4-arm64-v8a.apk/file" target="_blank" class="btn btn-green">DESCARGAR APK</a>
-                <a href="https://www.minecraft.net/" target="_blank" class="btn btn-outline">Sitio Oficial</a>
+    <main class="mc-menu-container">
+        <section class="mc-card-pro">
+            <div class="mc-image-container">
+                <img src="https://www.minecraft.net/content/dam/games/minecraft/key-art/MC-Vanilla-Standard-Edition_Key-Art_800x450.jpg" alt="Minecraft" class="mc-thumb">
             </div>
-        </section>
-
-        <section class="card glass-effect">
-            <div class="badge blue">EXCLUSIVO</div>
-            <div class="card-icon">👤</div>
-            <h2>Skins 4D Pro</h2>
-            <p>Geometría avanzada y capas animadas para Bedrock.</p>
-            <button class="btn btn-blue">VER CATÁLOGO</button>
-        </section>
-
-        <section class="card glass-effect">
-            <div class="card-icon">💻</div>
-            <h2>Consola de Scripts</h2>
-            <p>Códigos GameTest y JSON optimizados para mods.</p>
-            <button onclick="window.location.href='funciones.html'" class="btn btn-cyan">EJECUTAR CONSOLA</button>
-        </section>
-
-        <section class="card glass-effect community-card">
-            <div class="card-icon">💬</div>
-            <h2>Comunidad MC</h2>
-            
-            <div id="comments-list" class="comments-display">
+            <div class="mc-info">
+                <h2 class="mc-font">MINECRAFT BEDROCK</h2>
+                <p>Descarga la versión estable para 64 bits optimizada.</p>
+                <div class="mc-button-group">
+                    <a href="https://www.mediafire.com/file/seswa9mbv170lmx/MinecraftBedrock64Bits-1.26.3.1-zRingPvP.apk/file" target="_blank" class="mc-btn mc-btn-green">DESCARGAR APK</a>
+                    <a href="https://www.minecraft.net/" target="_blank" class="mc-btn mc-btn-gray">SITIO OFICIAL</a>
                 </div>
-
-            <div class="comment-input-area">
-                <textarea id="user-comment" placeholder="Comparte tu opinión con la comunidad..."></textarea>
-                <button class="btn btn-green btn-small" onclick="enviarComentario()">PUBLICAR COMENTARIO</button>
             </div>
         </section>
 
-        <section class="card glass-effect">
-            <div class="card-icon">⚙️</div>
-            <h2>Ajustes del Sitio</h2>
-            <p>Optimiza el rendimiento en tu dispositivo.</p>
-            <div class="settings-grid">
-                <button class="btn btn-outline" onclick="alert('Caché limpiada con éxito')">LIMPIAR CACHÉ</button>
-                <button class="btn btn-outline" onclick="location.reload()">RECARGAR</button>
+        <div class="mc-grid">
+            <div class="mc-card-mini">
+                <h3 class="mc-font">SKINS 4D</h3>
+                <p>Modelos con relieve.</p>
+                <button class="mc-btn mc-btn-blue">EXPLORAR</button>
+            </div>
+            <div class="mc-card-mini" onclick="window.location.href='funciones.html'">
+                <h3 class="mc-font">SCRIPTS</h3>
+                <p>Terminal de códigos.</p>
+                <button class="mc-btn mc-btn-cyan">CONSOLA</button>
+            </div>
+        </div>
+
+        <section class="mc-card-pro community-section">
+            <h2 class="mc-font">COMUNIDAD</h2>
+            <div id="comments-display" class="mc-chat-box">
+                </div>
+            <div class="mc-input-group">
+                <input type="text" id="user-name" placeholder="Tu nombre..." class="mc-input">
+                <textarea id="user-comment" placeholder="Escribe un comentario..." class="mc-input"></textarea>
+                <button class="mc-btn mc-btn-green" onclick="enviarComentario()">ENVIAR MENSAJE</button>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 MC Advanced | <span class="white">ErickDev Project</span></p>
+    <footer class="mc-footer">
+        <p>DESARROLLADO POR <strong>ERICKDEV</strong> - 2026</p>
     </footer>
 
     <script src="script.js"></script>

@@ -1,14 +1,15 @@
 /* =========================================
-   MC ADVANCED - ESTILOS PRO (v2.0)
+   MC ADVANCED - ESTILO SUPREMO MINECRAFT
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&family=Inter:wght@300;400;700&display=swap');
 
 /* Configuración General */
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
+    image-rendering: pixelated; /* Hace que todo se vea más retro/Minecraft */
 }
 
 body {
@@ -22,197 +23,146 @@ body {
     overflow-x: hidden;
 }
 
-/* Fondo con Parallax */
-.creeper-bg {
+/* Fondo de Tierra de Minecraft */
+.mc-dirt-bg {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)), 
-                url('https://wallpaperaccess.com/full/1512411.jpg');
-    background-size: cover;
-    background-position: center;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
+                url('https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/dirt.png');
+    background-size: 64px;
     z-index: -1;
 }
 
-/* --- PANTALLA DE CARGA PRO --- */
+/* --- PANTALLA DE CARGA (MOJANG STYLE) --- */
 #loader {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    top: 0; left: 0; width: 100vw; height: 100vh;
     background: #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.8s ease;
 }
 
-.creeper-head {
-    width: 60px;
-    height: 60px;
+.creeper-face-pixel {
+    width: 80px;
+    height: 80px;
     background: #39FF14;
-    position: relative;
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.7);
-    margin-bottom: 25px;
-    border: 3px solid #000;
-    animation: pulse 2s infinite ease-in-out;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    border: 4px solid #000;
+    margin-bottom: 20px;
 }
 
-.eye { width: 12px; height: 12px; background: #000; position: absolute; top: 12px; }
-.left { left: 10px; }
-.right { right: 10px; }
-.mouth { 
-    width: 24px; 
-    height: 24px; 
-    background: #000; 
-    position: absolute; 
-    bottom: 6px; 
-    left: 18px; 
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 75% 100%, 75% 50%, 25% 50%, 25% 100%, 0% 100%);
+.pixel-eye { background: #000; grid-area: 2 / 2 / 4 / 4; }
+.pixel-eye:nth-child(2) { grid-area: 2 / 6 / 4 / 8; }
+.pixel-mouth { background: #000; grid-area: 5 / 3 / 9 / 7; clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 100%, 75% 50%, 25% 50%, 25% 100%, 0 100%); }
+
+.loading-bar-mc {
+    width: 250px;
+    height: 10px;
+    background: #333;
+    border: 2px solid #fff;
+    margin-top: 20px;
 }
 
-.load-bar {
-    width: 200px;
-    height: 4px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 15px;
-}
-
-.progress {
+.fill {
     width: 0%;
     height: 100%;
     background: #39FF14;
-    box-shadow: 0 0 10px #39FF14;
-    transition: width 2.5s ease-in-out;
+    transition: width 3s linear;
 }
 
-/* --- DISEÑO DE CONTENIDO --- */
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-    padding: 40px 20px;
-    max-width: 1300px;
-    width: 100%;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #39FF14;
-    background: rgba(255, 255, 255, 0.07);
-}
-
-/* Textos */
-.neon-text {
-    font-family: 'Orbitron', sans-serif;
-    color: #39FF14;
-    font-size: 2.5rem;
-    text-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
-    margin-top: 30px;
-    letter-spacing: 3px;
-}
-
-.status-bar {
-    font-size: 0.7rem;
-    color: #39FF14;
-    background: rgba(57, 255, 20, 0.1);
-    padding: 5px 12px;
-    border-radius: 20px;
+/* --- BOTONES ESTILO MINECRAFT (CUADRADOS) --- */
+.mc-btn {
     display: inline-block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-/* Botones */
-.btn {
-    padding: 12px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.8rem;
+    background: #666;
+    border: 3px solid #000;
+    box-shadow: inset -4px -4px 0px #333, inset 4px 4px 0px #aaa;
+    color: white;
+    padding: 12px 20px;
+    text-shadow: 2px 2px #000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
     cursor: pointer;
-    border: none;
-    transition: 0.3s;
-    margin-top: 10px;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.1s;
+    margin: 5px;
 }
 
-.btn-green { background: #39FF14; color: #000; box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3); }
-.btn-blue { background: #00a2ff; color: #fff; }
-.btn-outline { border: 1px solid rgba(255,255,255,0.2); color: #fff; background: transparent; }
-.btn:hover { filter: brightness(1.2); transform: scale(1.02); }
+.mc-btn:hover { background: #777; border-color: #fff; }
+.mc-btn:active { box-shadow: inset 4px 4px 0px #333, inset -4px -4px 0px #aaa; transform: translateY(2px); }
 
-/* --- SECCIÓN COMUNIDAD --- */
-.comments-display {
-    background: rgba(0,0,0,0.3);
-    border-radius: 12px;
+.mc-btn-green { background: #3fa027; box-shadow: inset -4px -4px 0px #2a6b1a, inset 4px 4px 0px #6fd155; }
+.mc-btn-blue { background: #00a2ff; box-shadow: inset -4px -4px 0px #0070b3, inset 4px 4px 0px #5ecbff; }
+.mc-btn-gray { background: #444; box-shadow: inset -4px -4px 0px #222, inset 4px 4px 0px #888; }
+
+/* --- TARJETAS TIPO MENÚ --- */
+.mc-card-pro {
+    background: rgba(0, 0, 0, 0.6);
+    border: 4px solid #555;
+    padding: 20px;
+    border-radius: 0; /* Minecraft es cuadrado */
+    margin-bottom: 25px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.mc-thumb {
+    width: 100%;
+    border: 3px solid #555;
+    margin-bottom: 15px;
+}
+
+.mc-font {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    color: #39FF14;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* --- CHAT DE COMUNIDAD --- */
+.mc-chat-box {
+    background: #000;
+    border: 2px solid #555;
     height: 200px;
-    overflow-y: auto;
-    margin: 15px 0;
+    overflow-y: scroll;
     padding: 10px;
     text-align: left;
+    margin: 10px 0;
 }
 
-.comment-item {
-    background: rgba(255,255,255,0.05);
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    border-left: 3px solid #39FF14;
-}
+.comment-item { border-bottom: 1px solid #222; padding: 5px 0; }
+.comment-user { color: #39FF14; font-family: 'Press Start 2P'; font-size: 8px; }
+.comment-text { color: #fff; font-size: 13px; margin-left: 5px; }
 
-.comment-user { font-weight: bold; color: #39FF14; font-size: 0.8rem; margin-bottom: 3px; }
-.comment-text { font-size: 0.85rem; color: #ddd; }
-
-.comment-input-area textarea {
+.mc-input {
     width: 100%;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 10px;
+    background: #111;
+    border: 2px solid #555;
     color: #fff;
-    resize: none;
-    height: 60px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Animaciones */
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.1); opacity: 1; }
+/* Títulos Neón */
+.neon-text-pro {
+    font-family: 'Orbitron', sans-serif;
+    color: #39FF14;
+    font-size: 2.2rem;
+    text-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    margin: 20px 0;
 }
 
-.pulse { animation: pulse-animation 2s infinite; }
-@keyframes pulse-animation {
-    0% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.4); }
-    70% { box-shadow: 0 0 0 10px rgba(57, 255, 20, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
-}
-
-/* Responsivo para Celulares */
+/* Responsive */
 @media (max-width: 600px) {
-    .neon-text { font-size: 1.8rem; }
-    .container { padding: 20px 10px; }
-    .card { padding: 20px; }
-    .creeper-head { width: 50px; height: 50px; }
+    .neon-text-pro { font-size: 1.5rem; }
+    .mc-btn { font-size: 8px; padding: 10px; }
 }
