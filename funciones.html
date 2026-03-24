@@ -4,63 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consola de Scripts | MC Advanced</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="loader">
-        <div class="creeper-face-pixel">
-            <div class="pixel-eye"></div>
-            <div class="pixel-eye"></div>
-            <div class="pixel-mouth"></div>
-        </div>
-        <h2 class="mc-font">TERMINAL DE SCRIPTS</h2>
-        <div class="loading-bar-mc"><div class="fill"></div></div>
-    </div>
-
-    <div class="mc-dirt-bg"></div>
+    <div class="mc-anime-bg"></div>
 
     <header class="main-header">
-        <div class="logo-container">
-            <h1 class="neon-text-pro">CONSOLA <span class="edition">TÉCNICA</span></h1>
-            <div class="version-badge">MODO DESARROLLADOR v1.26.10.4</div>
+        <div class="header-content">
+            <h1 class="neon-text-pro">CONSOLA <span class="white">SCRIPTS</span></h1>
+            <p class="mc-font" style="font-size: 8px; color: #aaa;">DEVELOPER TERMINAL v1.2.5</p>
         </div>
     </header>
 
-    <main class="mc-menu-container">
+    <main class="container">
         
-        <section class="mc-card-pro">
-            <div class="card-header-mc">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="mc-label">GAMETEST.JS</span>
-            </div>
-            <div class="mc-info">
-                <h2 class="mc-font">Auto-Mensaje NPC</h2>
-                <p>Script para que el servidor salude a los nuevos jugadores.</p>
-                <div class="code-terminal-mc">
-                    <pre id="code1"><code>world.afterEvents.playerSpawn.subscribe((ev) => {
+        <section class="mc-card-pro highlight-card">
+            <div class="card-tag">JAVASCRIPT</div>
+            <div class="card-icon">📜</div>
+            <h2 class="mc-font">Auto-Mensaje NPC</h2>
+            <p class="description">Script de GameTest para enviar un mensaje automático de bienvenida a los nuevos usuarios.</p>
+            
+            <div class="code-terminal-mc">
+<pre id="code1"><code>world.afterEvents.playerSpawn.subscribe((ev) => {
   const { player } = ev;
   player.sendMessage("§a¡Bienvenido a MC Advanced!");
 });</code></pre>
-                </div>
-                <button class="mc-btn mc-btn-blue" onclick="copiarCodigo(document.getElementById('code1').innerText)">COPIAR SCRIPT</button>
             </div>
+            
+            <button class="mc-btn mc-btn-blue" onclick="copiarCodigo(document.getElementById('code1').innerText)">
+                COPIAR SCRIPT
+            </button>
         </section>
 
         <section class="mc-card-pro">
-            <div class="card-header-mc">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="mc-label">GEOMETRY.JSON</span>
-            </div>
-            <div class="mc-info">
-                <h2 class="mc-font">Skin Geometry 4D</h2>
-                <p>Base de geometría para capas o skins con relieve.</p>
-                <div class="code-terminal-mc">
-                    <pre id="code2"><code>"geometry.humanoid.custom": {
+            <div class="card-tag">JSON 4D</div>
+            <div class="card-icon">💎</div>
+            <h2 class="mc-font">Skin Geometry 4D</h2>
+            <p class="description">Base de geometría avanzada para crear capas o skins con relieve y profundidad.</p>
+            
+            <div class="code-terminal-mc">
+<pre id="code2"><code>"geometry.humanoid.custom": {
   "bones": [
     {
       "name": "waist",
@@ -71,36 +55,35 @@
     }
   ]
 }</code></pre>
+            </div>
+            
+            <button class="mc-btn mc-btn-green" onclick="copiarCodigo(document.getElementById('code2').innerText)">
+                COPIAR GEOMETRY
+            </button>
+        </section>
+
+        <section class="mc-card-pro chat-section">
+            <h2 class="mc-font">FEEDBACK TÉCNICO</h2>
+            <p class="description" style="font-size: 11px;">¿Necesitas un script personalizado? Escríbelo aquí abajo.</p>
+            
+            <div id="comments-display" class="mc-chat-box">
                 </div>
-                <button class="mc-btn mc-btn-green" onclick="copiarCodigo(document.getElementById('code2').innerText)">COPIAR GEOMETRY</button>
+            
+            <div class="mc-input-group">
+                <input type="text" id="user-name" placeholder="Tu Nickname..." class="mc-input">
+                <textarea id="user-comment" placeholder="Describe el script que necesitas..." class="mc-input" rows="2"></textarea>
+                <button onclick="enviarComentario()" class="mc-btn mc-btn-green w-100">ENVIAR PETICIÓN</button>
             </div>
         </section>
 
-        <section class="mc-card-pro">
-            <div class="card-header-mc">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="mc-label">COMMAND.MC</span>
-            </div>
-            <div class="mc-info">
-                <h2 class="mc-font">Clear Lag Básico</h2>
-                <p>Comando para limpiar entidades sueltas y reducir el lag.</p>
-                <div class="code-terminal-mc">
-                    <pre id="code3"><code>/kill @e[type=item]</code></pre>
-                </div>
-                <button class="mc-btn mc-btn-gray" onclick="copiarCodigo(document.getElementById('code3').innerText)">COPIAR COMANDO</button>
-            </div>
-        </section>
-
-        <div class="back-area">
-            <a href="index.html" class="mc-btn mc-btn-gray">← REGRESAR AL INICIO</a>
+        <div style="margin-top: 30px; margin-bottom: 50px;">
+            <a href="index.html" class="mc-btn mc-btn-gray">← VOLVER AL INICIO</a>
         </div>
 
     </main>
 
     <footer class="mc-footer">
-        <p>TERMINAL_SYSTEM // 2026 // <strong>ERICKDEV</strong></p>
+        <p>MC ADVANCED // <strong>ENGINE TERMINAL</strong> // 2026</p>
     </footer>
 
     <script src="script.js"></script>

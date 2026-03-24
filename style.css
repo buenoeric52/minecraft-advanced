@@ -1,20 +1,20 @@
 /* =========================================
-   MC ADVANCED - ESTILO SUPREMO MINECRAFT
+   MC ADVANCED - CORE VISUAL v5.0 (FINAL)
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&family=Inter:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=Inter:wght@400;700&display=swap');
 
-/* Configuración General */
+/* Reset y Optimización */
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
-    image-rendering: pixelated; /* Hace que todo se vea más retro/Minecraft */
+    image-rendering: pixelated; /* Mantiene los bordes nítidos tipo pixel-art */
 }
 
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: #050505;
+    color: #ffffff;
     font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
@@ -23,146 +23,192 @@ body {
     overflow-x: hidden;
 }
 
-/* Fondo de Tierra de Minecraft */
-.mc-dirt-bg {
+/* 1. FONDO DINÁMICO (Anime & Minecraft) */
+.mc-anime-bg {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
-                url('https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/dirt.png');
-    background-size: 64px;
+    /* Capa de oscuridad sobre la imagen para que el texto resalte */
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(5,5,5,0.95) 100%), 
+                url('https://wallpaperaccess.com/full/1512411.jpg');
+    background-size: cover;
+    background-position: center;
     z-index: -1;
 }
 
-/* --- PANTALLA DE CARGA (MOJANG STYLE) --- */
-#loader {
-    position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
-    background: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    transition: opacity 0.8s ease;
-}
-
-.creeper-face-pixel {
-    width: 80px;
-    height: 80px;
-    background: #39FF14;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    border: 4px solid #000;
-    margin-bottom: 20px;
-}
-
-.pixel-eye { background: #000; grid-area: 2 / 2 / 4 / 4; }
-.pixel-eye:nth-child(2) { grid-area: 2 / 6 / 4 / 8; }
-.pixel-mouth { background: #000; grid-area: 5 / 3 / 9 / 7; clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 100%, 75% 50%, 25% 50%, 25% 100%, 0 100%); }
-
-.loading-bar-mc {
-    width: 250px;
-    height: 10px;
-    background: #333;
-    border: 2px solid #fff;
-    margin-top: 20px;
-}
-
-.fill {
-    width: 0%;
-    height: 100%;
-    background: #39FF14;
-    transition: width 3s linear;
-}
-
-/* --- BOTONES ESTILO MINECRAFT (CUADRADOS) --- */
-.mc-btn {
-    display: inline-block;
-    background: #666;
-    border: 3px solid #000;
-    box-shadow: inset -4px -4px 0px #333, inset 4px 4px 0px #aaa;
-    color: white;
-    padding: 12px 20px;
-    text-shadow: 2px 2px #000;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-    cursor: pointer;
-    text-decoration: none;
+/* 2. HEADER Y TÍTULOS */
+.main-header {
     text-align: center;
-    transition: 0.1s;
-    margin: 5px;
+    padding: 50px 20px;
 }
 
-.mc-btn:hover { background: #777; border-color: #fff; }
-.mc-btn:active { box-shadow: inset 4px 4px 0px #333, inset -4px -4px 0px #aaa; transform: translateY(2px); }
-
-.mc-btn-green { background: #3fa027; box-shadow: inset -4px -4px 0px #2a6b1a, inset 4px 4px 0px #6fd155; }
-.mc-btn-blue { background: #00a2ff; box-shadow: inset -4px -4px 0px #0070b3, inset 4px 4px 0px #5ecbff; }
-.mc-btn-gray { background: #444; box-shadow: inset -4px -4px 0px #222, inset 4px 4px 0px #888; }
-
-/* --- TARJETAS TIPO MENÚ --- */
-.mc-card-pro {
-    background: rgba(0, 0, 0, 0.6);
-    border: 4px solid #555;
-    padding: 20px;
-    border-radius: 0; /* Minecraft es cuadrado */
-    margin-bottom: 25px;
-    max-width: 500px;
-    width: 90%;
-    text-align: center;
+.neon-text-pro {
+    font-family: 'Orbitron', sans-serif;
+    color: #39FF14;
+    font-size: 2.8rem;
+    text-shadow: 0 0 20px rgba(57, 255, 20, 0.7);
+    letter-spacing: 4px;
+    margin-bottom: 10px;
 }
 
-.mc-thumb {
-    width: 100%;
-    border: 3px solid #555;
-    margin-bottom: 15px;
-}
+.white { color: #fff; text-shadow: none; }
 
 .mc-font {
     font-family: 'Press Start 2P', cursive;
-    font-size: 14px;
+    font-size: 10px;
     color: #39FF14;
-    margin-bottom: 10px;
-    line-height: 1.5;
+    letter-spacing: 1px;
 }
 
-/* --- CHAT DE COMUNIDAD --- */
-.mc-chat-box {
-    background: #000;
-    border: 2px solid #555;
-    height: 200px;
-    overflow-y: scroll;
-    padding: 10px;
-    text-align: left;
+/* 3. CONTENEDOR DE TARJETAS (DISEÑO AVANZADO) */
+.container {
+    width: 95%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.mc-card-pro {
+    background: rgba(10, 10, 10, 0.9);
+    border: 3px solid #222;
+    border-left: 5px solid #39FF14; /* Borde verde distintivo */
+    padding: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.mc-card-pro:hover {
+    border-color: #39FF14;
+    transform: translateX(5px);
+    box-shadow: -10px 0 20px rgba(57, 255, 20, 0.1);
+}
+
+.card-tag {
+    position: absolute;
+    top: 0; right: 0;
+    background: #39FF14;
+    color: #000;
+    font-family: 'Press Start 2P';
+    font-size: 7px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 14px;
+    color: #bbb;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+/* 4. BOTONES TIPO BLOQUE MC (MEJORADOS) */
+.mc-btn {
+    display: inline-block;
+    width: 100%;
+    border: 4px solid #000;
+    /* Efecto de relieve 3D de Minecraft */
+    box-shadow: inset -4px -4px 0px rgba(0,0,0,0.5), 
+                inset 4px 4px 0px rgba(255,255,255,0.2);
+    color: white;
+    padding: 16px;
+    text-shadow: 2px 2px #000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
     margin: 10px 0;
 }
 
-.comment-item { border-bottom: 1px solid #222; padding: 5px 0; }
-.comment-user { color: #39FF14; font-family: 'Press Start 2P'; font-size: 8px; }
-.comment-text { color: #fff; font-size: 13px; margin-left: 5px; }
+.mc-btn-green { background: #3fa027; }
+.mc-btn-blue { background: #00a2ff; }
+.mc-btn-gray { background: #444; }
+
+.mc-btn:active {
+    transform: scale(0.97);
+    box-shadow: inset 4px 4px 0px rgba(0,0,0,0.6);
+}
+
+/* 5. SISTEMA DE CHAT / COMENTARIOS */
+.mc-chat-box {
+    background: #000;
+    border: 2px solid #333;
+    height: 200px;
+    overflow-y: auto;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.comment-item {
+    border-bottom: 1px solid #1a1a1a;
+    padding: 10px 0;
+    animation: slideIn 0.3s ease-out;
+}
+
+.comment-user { 
+    color: #39FF14; 
+    font-family: 'Press Start 2P'; 
+    font-size: 7px; 
+    display: block;
+}
 
 .mc-input {
     width: 100%;
     background: #111;
-    border: 2px solid #555;
+    border: 2px solid #333;
     color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 15px;
     font-family: 'Inter', sans-serif;
+    margin-bottom: 10px;
 }
 
-/* Títulos Neón */
-.neon-text-pro {
-    font-family: 'Orbitron', sans-serif;
+.mc-input:focus {
+    border-color: #39FF14;
+    outline: none;
+}
+
+/* 6. TERMINAL DE CÓDIGO (Para funciones.html) */
+.code-terminal-mc {
+    background: #050505;
+    border: 1px solid #39FF14;
+    padding: 15px;
+    overflow-x: auto;
+    margin: 15px 0;
+    text-align: left;
+}
+
+code {
+    font-family: 'Consolas', monospace;
     color: #39FF14;
-    font-size: 2.2rem;
-    text-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
-    margin: 20px 0;
+    font-size: 13px;
 }
 
-/* Responsive */
+/* 7. NOTIFICACIÓN FLOTANTE (Toast) */
+.mc-toast {
+    position: fixed;
+    bottom: 20px;
+    background: #39FF14;
+    color: #000;
+    padding: 12px 25px;
+    font-family: 'Press Start 2P';
+    font-size: 8px;
+    border: 4px solid #000;
+    z-index: 9999;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Ajustes para Celulares */
 @media (max-width: 600px) {
-    .neon-text-pro { font-size: 1.5rem; }
-    .mc-btn { font-size: 8px; padding: 10px; }
+    .neon-text-pro { font-size: 1.8rem; }
+    .mc-card-pro { padding: 20px; width: 95%; }
 }

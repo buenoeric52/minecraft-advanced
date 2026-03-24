@@ -4,49 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MC ADVANCED | ErickDev</title>
-    <link rel="stylesheet" href="style.css"> <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="mc-dirt-bg"></div> <header class="main-header">
-        <h1 class="neon-text-pro">ADVANCED <span class="edition">EDITION</span></h1>
-        <p class="mc-font">OFFICIAL v1.26.10.4</p>
+    <div class="mc-anime-bg"></div>
+
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="neon-text-pro">MC <span class="white">ADVANCED</span></h1>
+            <div class="status-indicator">
+                <span class="dot pulse"></span>
+                <p class="mc-font">OFFICIAL v1.26.10.4</p>
+            </div>
+        </div>
     </header>
 
-    <main class="mc-menu-container">
-        <section class="mc-card-pro">
+    <main class="container">
+        
+        <section class="mc-card-pro highlight-card">
+            <div class="card-tag">NEW UPDATE</div>
+            <div class="card-icon">📦</div>
             <h2 class="mc-font">MINECRAFT BEDROCK</h2>
-            <p>Descarga la versión estable para 64 bits optimizada.</p>
-            <div class="button-group">
-                <a href="#" class="mc-btn mc-btn-green">DESCARGAR APK</a>
-                <a href="#" class="mc-btn mc-btn-gray">SITIO OFICIAL</a>
+            <p class="description">Versión estable optimizada para procesadores de 64 bits. Máximo rendimiento sin lag.</p>
+            
+            <div class="action-area">
+                <a href="https://www.mediafire.com/file/seswa9mbv170lmx/MinecraftBedrock64Bits-1.26.3.1-zRingPvP.apk/file" 
+                   class="mc-btn mc-btn-green" 
+                   aria-label="Descargar APK de Minecraft">
+                   DESCARGAR APK
+                </a>
+                
+                <a href="https://www.minecraft.net/" 
+                   target="_blank" 
+                   class="mc-btn mc-btn-gray" 
+                   aria-label="Ir al sitio oficial de Minecraft">
+                   SITIO OFICIAL MC
+                </a>
             </div>
         </section>
 
         <section class="mc-card-pro">
-            <h2 class="mc-font">SKINS 4D</h2>
-            <p>Modelos con relieve exclusivos.</p>
-            <a href="#" class="mc-btn mc-btn-blue">EXPLORAR</a>
+            <div class="card-icon">💻</div>
+            <h2 class="mc-font">CONSOLE ENGINE</h2>
+            <p class="description">Accede a la base de datos de scripts y configuraciones JSON para mods.</p>
+            <a href="funciones.html" class="mc-btn mc-btn-blue">ABRIR CONSOLA</a>
         </section>
 
-        <section class="mc-card-pro">
-            <h2 class="mc-font">SCRIPTS</h2>
-            <p>Terminal de códigos avanzada.</p>
-            <a href="funciones.html" class="mc-btn mc-btn-gray">CONSOLA</a>
-        </section>
-
-        <section class="mc-card-pro">
-            <h2 class="mc-font">COMUNIDAD</h2>
-            <div id="comments-display" class="mc-chat-box"></div>
+        <section class="mc-card-pro chat-section">
+            <h2 class="mc-font">CHAT COMUNIDAD</h2>
+            <div id="comments-display" class="mc-chat-box">
+                </div>
+            
             <div class="mc-input-group">
-                <input type="text" id="user-name" placeholder="Tu nombre..." class="mc-input">
-                <textarea id="user-comment" placeholder="Escribe un comentario..." class="mc-input"></textarea>
-                <button onclick="enviarComentario()" class="mc-btn mc-btn-green">ENVIAR MENSAJE</button>
+                <div class="input-container">
+                    <input type="text" id="user-name" placeholder="Nombre de usuario..." class="mc-input">
+                </div>
+                <div class="input-container">
+                    <textarea id="user-comment" placeholder="Escribe tu mensaje aquí..." class="mc-input" rows="2"></textarea>
+                </div>
+                <button onclick="enviarComentario()" class="mc-btn mc-btn-green w-100">PUBLICAR MENSAJE</button>
             </div>
         </section>
+        
     </main>
 
     <footer class="mc-footer">
-        <p>DESARROLLADO POR <strong>ERICKDEV</strong> - 2026</p>
+        <div class="footer-line"></div>
+        <p>TERMINAL SYSTEM // DESARROLLADO POR <strong>ERICKDEV</strong> - 2026</p>
     </footer>
 
     <script src="script.js"></script>
