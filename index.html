@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MC ADVANCED | ErickDev</title>
+    <title>MC ADVANCED | ErickDev Pro</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://utils.creeper.host/images/face/creeper">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="loader">
-        <div class="creeper-head">
-            <div class="eye left"></div>
-            <div class="eye right"></div>
-            <div class="mouth"></div>
+        <div class="creeper-container">
+            <div class="creeper-head">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="mouth"></div>
+            </div>
+            <h1 class="loader-text">INICIANDO SISTEMA...</h1>
+            <div class="load-bar"><div class="progress"></div></div>
         </div>
-        <h1 class="loader-text">CARGANDO MC ADVANCED...</h1>
-        <p style="color: #555; font-family: 'Orbitron'; font-size: 0.8rem;">v1.26.10.4</p>
     </div>
 
     <div class="creeper-bg"></div>
@@ -24,59 +26,67 @@
     <header>
         <div class="logo-container">
             <h1 class="neon-text">MC <span class="white">ADVANCED</span></h1>
-            <div class="divider"></div>
             <p class="subtitle">Premium Direct Downloads & 4D Scripts</p>
+            <div class="status-bar">
+                <span class="status-dot"></span> SERVIDOR ONLINE v1.26.10.4
+            </div>
         </div>
     </header>
 
     <main class="container">
         <section class="card glass-effect">
-            <div class="badge pulse">OFICIAL</div>
+            <div class="badge pulse">NUEVO</div>
             <div class="card-icon">📦</div>
-            <h2>Minecraft Bedrock APK</h2>
-            <p class="version-text">Versión 1.26.10.4 (64 Bits)</p>
+            <h2>Minecraft Bedrock</h2>
+            <p class="version-text">Última Versión (64 Bits)</p>
             <p class="author-tag">By zRingPvP</p>
             <div class="button-group">
-                <a href="https://www.mediafire.com/file/zd6za0ll7rexbm5/minecraft-1.26.10.4-arm64-v8a.apk/file" target="_blank" class="btn btn-green">DESCARGAR AHORA</a>
+                <a href="https://www.mediafire.com/file/iktnkzvfwhzcz4e/minecraft-1.26.10.4-arm64-v8a.apk/file" target="_blank" class="btn btn-green">DESCARGAR APK</a>
                 <a href="https://www.minecraft.net/" target="_blank" class="btn btn-outline">Sitio Oficial</a>
             </div>
         </section>
 
         <section class="card glass-effect">
-            <div class="badge blue">PREMIUM</div>
+            <div class="badge blue">EXCLUSIVO</div>
             <div class="card-icon">👤</div>
-            <h2>Skins 4D & Geometría</h2>
-            <p>Modelos exclusivos con geometría avanzada y texturas personalizadas.</p>
-            <button class="btn btn-blue disabled">PRÓXIMAMENTE</button>
+            <h2>Skins 4D Pro</h2>
+            <p>Geometría avanzada y capas animadas para Bedrock.</p>
+            <button class="btn btn-blue">VER CATÁLOGO</button>
         </section>
 
         <section class="card glass-effect">
             <div class="card-icon">💻</div>
             <h2>Consola de Scripts</h2>
-            <p>Accede a la base de datos de códigos avanzados para optimización.</p>
-            <button onclick="window.location.href='funciones.html'" class="btn btn-cyan">ENTRAR A CÓDIGOS</button>
+            <p>Códigos GameTest y JSON optimizados para mods.</p>
+            <button onclick="window.location.href='funciones.html'" class="btn btn-cyan">EJECUTAR CONSOLA</button>
         </section>
 
-        <section class="card glass-effect comment-section">
+        <section class="card glass-effect community-card">
             <div class="card-icon">💬</div>
-            <h2>Comunidad</h2>
-            <p>¿Cómo te funcionó la APK?</p>
-            <div class="comment-box">
-                <textarea id="user-comment" placeholder="Escribe tu comentario aquí..."></textarea>
+            <h2>Comunidad MC</h2>
+            
+            <div id="comments-list" class="comments-display">
+                </div>
+
+            <div class="comment-input-area">
+                <textarea id="user-comment" placeholder="Comparte tu opinión con la comunidad..."></textarea>
+                <button class="btn btn-green btn-small" onclick="enviarComentario()">PUBLICAR COMENTARIO</button>
             </div>
-            <button class="btn btn-green" onclick="enviarComentario()">ENVIAR OPINIÓN</button>
         </section>
 
         <section class="card glass-effect">
             <div class="card-icon">⚙️</div>
-            <h2>Ajustes de Interfaz</h2>
-            <p>Personaliza tu experiencia visual.</p>
-            <button class="btn btn-outline" onclick="alert('Configuración guardada en el dispositivo')">LIMPIAR CACHÉ</button>
+            <h2>Ajustes del Sitio</h2>
+            <p>Optimiza el rendimiento en tu dispositivo.</p>
+            <div class="settings-grid">
+                <button class="btn btn-outline" onclick="alert('Caché limpiada con éxito')">LIMPIAR CACHÉ</button>
+                <button class="btn btn-outline" onclick="location.reload()">RECARGAR</button>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 MC Advanced | Creado por <strong>ErickDev</strong></p>
+        <p>&copy; 2026 MC Advanced | <span class="white">ErickDev Project</span></p>
     </footer>
 
     <script src="script.js"></script>

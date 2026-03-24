@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consola de Funciones | MC Advanced</title>
+    <title>Consola de Scripts | MC Advanced</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="loader">
-        <div class="creeper-head">
-            <div class="eye left"></div>
-            <div class="eye right"></div>
-            <div class="mouth"></div>
+        <div class="creeper-container">
+            <div class="creeper-head">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="mouth"></div>
+            </div>
+            <h1 class="loader-text">ACCEDIENDO A LA CONSOLA...</h1>
+            <div class="load-bar"><div class="progress"></div></div>
         </div>
-        <h1 class="loader-text">ACCEDIENDO A LA CONSOLA...</h1>
     </div>
 
     <div class="creeper-bg"></div>
@@ -22,7 +25,10 @@
     <header>
         <div class="logo-container">
             <h1 class="neon-text">CONSOLA <span class="white">SCRIPTS</span></h1>
-            <p class="subtitle">Base de datos avanzada para Desarrolladores</p>
+            <p class="subtitle">Base de datos técnica v1.26.10.4</p>
+            <div class="status-bar">
+                <span class="status-dot"></span> MODO DESARROLLADOR ACTIVO
+            </div>
         </div>
     </header>
 
@@ -33,8 +39,8 @@
             <div class="card-icon">📜</div>
             <h2>Auto-Mensaje NPC</h2>
             <p>Script para que el servidor salude a los nuevos jugadores.</p>
-            <div class="code-box" style="background: rgba(0,0,0,0.6); padding: 15px; border-radius: 10px; margin: 15px 0; border: 1px solid #00a2ff;">
-<pre id="code1" style="font-size: 0.8rem; color: #00f2ff; text-align: left; overflow-x: auto;">
+            <div class="code-box">
+<pre id="code1">
 world.afterEvents.playerSpawn.subscribe((ev) => {
   const { player } = ev;
   player.sendMessage("§a¡Bienvenido a MC Advanced!");
@@ -49,8 +55,8 @@ world.afterEvents.playerSpawn.subscribe((ev) => {
             <div class="card-icon">💎</div>
             <h2>Skin Geometry 4D</h2>
             <p>Base de geometría para capas o skins con relieve.</p>
-            <div class="code-box" style="background: rgba(0,0,0,0.6); padding: 15px; border-radius: 10px; margin: 15px 0; border: 1px solid #ffaa00;">
-<pre id="code2" style="font-size: 0.8rem; color: #ffaa00; text-align: left; overflow-x: auto;">
+            <div class="code-box">
+<pre id="code2">
 "geometry.humanoid.custom": {
   "bones": [
     {
@@ -67,14 +73,27 @@ world.afterEvents.playerSpawn.subscribe((ev) => {
             <button class="btn btn-green" onclick="copiarCodigo(document.getElementById('code2').innerText)">COPIAR GEOMETRY</button>
         </section>
 
-        <div style="width: 100%; text-align: center; margin-top: 30px; margin-bottom: 50px;">
+        <section class="card glass-effect">
+            <div class="badge" style="background: #39FF14; color: #000;">PERFORMANCE</div>
+            <div class="card-icon">⚡</div>
+            <h2>Clear Lag Básico</h2>
+            <p>Comando para limpiar entidades sueltas y reducir el lag.</p>
+            <div class="code-box">
+<pre id="code3">
+/kill @e[type=item]
+</pre>
+            </div>
+            <button class="btn btn-cyan" onclick="copiarCodigo(document.getElementById('code3').innerText)">COPIAR COMANDO</button>
+        </section>
+
+        <div style="grid-column: 1 / -1; text-align: center; margin: 40px 0;">
             <a href="index.html" class="btn btn-outline" style="max-width: 250px; margin: 0 auto; display: inline-block;">← VOLVER AL INICIO</a>
         </div>
 
     </main>
 
-    <footer style="text-align: center; padding: 20px; color: #555;">
-        <p>&copy; 2026 MC Advanced | Terminal de Scripts</p>
+    <footer>
+        <p>&copy; 2026 MC Advanced | <span class="white">Terminal de Desarrollo</span></p>
     </footer>
 
     <script src="script.js"></script>
